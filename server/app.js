@@ -22,11 +22,31 @@ const app = express();
 
 app.use(
   cors({
-    origin: '*',
+    origin: [
+      'http://localhost:3000',
+      'https://amazon-clone-mern-dev.herokuapp.com',
+    ],
     credentials: true,
   })
 );
-app.use(helmet());
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: ["'self'", "'unsafe-inline'", 'https://js.stripe.com/v3'],
+        styleSrc: ["'self'"],
+        imgSrc: [
+          "'self'",
+          'https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg',
+        ],
+        connectSrc: ["'self'"],
+        frameSrc: ["'self'"],
+      },
+    },
+  })
+);
 
 const apiLimiter = rateLimit({
   windowMs: 1000 * 60 * 15, // 15 minutes
