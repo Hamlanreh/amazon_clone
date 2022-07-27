@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { loadStripe } from '@stripe/stripe-js';
 import axios from '../../utils/axios';
 
 const initialState = {
@@ -7,23 +6,6 @@ const initialState = {
   stripePromise: null,
   isLoading: false,
 };
-
-export const loadStripePromise = createAsyncThunk(
-  'stripe/loadStripePromise',
-  async () => {
-    try {
-      let stripePromise;
-      if (!stripePromise) {
-        stripePromise = loadStripe(
-          'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
-        );
-      }
-      return await stripePromise;
-    } catch (error) {
-      return error;
-    }
-  }
-);
 
 export const getCheckoutSession = createAsyncThunk(
   'stripe/getCheckoutSession',
@@ -48,17 +30,6 @@ const stripeSlice = createSlice({
   initialState,
   //   reducers: {},
   extraReducers: {
-    [loadStripePromise.pending]: state => {
-      state.isLoading = true;
-    },
-    [loadStripePromise.fulfilled]: (state, action) => {
-      state.stripePromise = action.payload;
-      state.isLoading = false;
-    },
-    [loadStripePromise.rejected]: state => {
-      state.isLoading = false;
-    },
-
     [getCheckoutSession.pending]: state => {
       state.isLoading = true;
     },

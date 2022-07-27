@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -19,16 +19,7 @@ import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
 
-import { useDispatch } from 'react-redux';
-import { loadStripePromise } from './features/stripe/stripeSlice';
-
 const App = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(loadStripePromise());
-  }, [dispatch]);
-
   return (
     <div className="app">
       <Router>
