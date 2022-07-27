@@ -1,0 +1,134 @@
+.reviews {
+  min-height: 90vh;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.reviews__productBox {
+  width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-primary-grey);
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__product {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-primary-grey);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reviews__productImg {
+  /* width: 100%; */
+  height: 35rem;
+  object-fit: cover;
+  margin: 2rem 0;
+  margin-right: 2rem;
+}
+
+.reviews__productDetail {
+  padding: 1rem;
+  font-size: 1.7rem;
+}
+.reviews__productDetail h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.reviews__productDetail p {
+  padding: 1rem 0;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+.reviews__productDetail .review__quantity {
+  background-color: var(--color-primary-orange);
+  color: var(--color-primary-white);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.review__createReview {
+  width: 70rem;
+}
+.review__createReview > button {
+  background-color: var(--color-primary-orange);
+  font-size: 1.6rem;
+  font-weight: 600;
+  width: 25rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.review__createReview > button:hover {
+  cursor: pointer;
+  transform: translateY(4px);
+}
+.review__createReview > form {
+  font-size: 1.7rem;
+}
+.review__createReview .form__control {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+.review__createReview .form__control label {
+  padding: 1rem 0;
+}
+.review__createReview .form__control textarea,
+.review__createReview .form__control input {
+  background-color: var(--color-primary-grey);
+  padding: 1rem;
+  border-radius: 4px;
+  border: none;
+}
+.review__createReview .form__control textarea {
+  height: 15rem;
+  overflow-y: scroll;
+  resize: none;
+}
+.review__createReview .form__control textarea:focus {
+  outline: 2px solid var(--color-primary-orange);
+}
+.review__createReview > form button {
+  background-color: var(--color-primary-orange);
+  font-size: 1.7rem;
+  font-weight: 600;
+  width: 25rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.review__createReview > form button:hover {
+  cursor: pointer;
+  transform: translateY(4px);
+}
+
+.reviews__listBox {
+  max-width: 90rem;
+  margin: 4rem auto;
+}
+
+.reviews__paginateBtn {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reviews__paginateBtn button {
+  background-color: var(--color-primary-orange);
+  font-size: 1.7rem;
+  padding: 1rem 2rem;
+  width: 25rem;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.reviews__paginateBtn button:hover {
+  cursor: pointer;
+  transform: translateY(4px);
+}

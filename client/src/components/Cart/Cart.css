@@ -1,0 +1,123 @@
+.cart {
+  background-color: var(--color-primary-lightblue);
+  padding: 4rem 2rem;
+  min-height: 90vh;
+  display: flex;
+}
+@media screen and (max-width: 70em) {
+  .cart {
+    flex-direction: column;
+  }
+  .cart__left,
+  .cart__right {
+    width: 100%;
+  }
+}
+
+.cart__left {
+  flex: 70%;
+}
+
+.cart__right {
+  flex: auto;
+}
+
+.cart__productBox {
+  background-color: var(--color-primary-white);
+  width: 100%;
+  border-radius: 4px;
+}
+
+.cart__emptyBox {
+  display: flex;
+  min-height: 25rem;
+}
+
+.cart__emptyLeft {
+  flex: 30%;
+}
+
+.cart__emptyRight {
+  flex: 70%;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart__emptyRight h2 {
+  font-size: 2.4rem;
+  padding: 0.5rem 0;
+}
+.cart__emptyRight p {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  color: var(--color-primary-darkgrey);
+}
+
+.cart__emptyBtn {
+  padding: 2rem 0;
+}
+.cart__emptyBtn button {
+  background-color: var(--color-primary-white);
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-primary-grey);
+  border-radius: 10px;
+  box-shadow: 0px 1px 2px darkgrey;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.cart__emptyBtn button:hover {
+  transform: scale(0.97);
+}
+.cart__emptyBtn > button + button {
+  margin-left: 2rem;
+}
+
+.cart__list {
+  min-height: 25rem;
+  padding: 2rem;
+}
+
+.cart__clearBtn {
+  background-color: var(--color-primary-orange);
+  padding: 1rem 0;
+  margin-top: 4rem;
+  width: 35rem;
+  border: none;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.cart__subtotal {
+  background-color: var(--color-primary-white);
+  width: 100%;
+  min-height: 10rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 4px;
+}
+.cart__subtotal > p {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.cart__checkoutBtn {
+  background-color: var(--color-primary-orange);
+  width: 35rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+.cart__checkoutBtn:hover {
+  transform: translateY(5px);
+  cursor: pointer;
+}
+
+.cart__terms {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+}

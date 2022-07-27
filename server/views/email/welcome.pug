@@ -1,0 +1,17 @@
+extends baseEmail
+
+block content
+    p Hi #{firstName},
+    p Welcome to the Ultimate Amazon Clone 🎉🎉🍾🍾😁😎
+    p Amazon clone is a wonderful website to buy different types of quality products at different prices, and we would also like to know you more so make sure to upload your picture, thank you.
+    table.btn.btn-primary(role="presentation", border="0", cellpadding="0", cellspacing="0")
+        tbody
+            tr
+                td(align="left")
+                    table(role="presentation", border="0", cellpadding="0", cellspacing="0")
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target="_blank") Upload user image
+    p If you need any help with our services contact our custome care.
+    p Good luck! Hope you enjoy your time with us.

@@ -1,0 +1,122 @@
+.header {
+  background-color: var(--color-primary-black);
+  height: 6rem;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  color: var(--color-primary-white);
+  display: flex;
+  align-items: center;
+}
+.header a {
+  color: var(--color-primary-white);
+}
+
+.header__logoBox {
+  margin: 0 1rem;
+}
+
+.header__logo {
+  display: block;
+  width: 12rem;
+  height: 5rem;
+  fill: var(--color-primary-white);
+}
+
+.header__location {
+  height: 5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.header__location > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__search {
+  height: 4rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header__searchOption,
+.header__searchInput,
+.header__searchBtn {
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.header__searchOption {
+  background-color: var(--color-primary-grey);
+  width: 6rem;
+  padding: 0 1rem;
+  border-radius: 4px 0 0 4px;
+  border-right: 1px solid var(--color-primary-black);
+}
+
+.header__searchInput {
+  width: 100%;
+  padding: 1rem;
+}
+
+.header__searchBtn {
+  background-color: var(--color-primary-orange);
+  padding: 1rem 2rem;
+  border-radius: 0 4px 4px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__searchBtn:hover {
+  cursor: pointer;
+}
+
+.header__option {
+  height: 5rem;
+  padding: 1rem;
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__optionTop {
+  font-size: 1.2rem;
+}
+
+.header__optionBot {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.header__cartBox {
+  padding: 1rem;
+  margin: 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.header__logo:hover,
+.header__location:hover,
+.header__option:hover,
+.header__cartBox:hover {
+  border: 1px solid var(--color-primary-white);
+  cursor: pointer;
+}
+
+.cartTotal {
+  background-color: var(--color-primary-white);
+  color: var(--color-primary-black);
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+}

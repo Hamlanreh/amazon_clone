@@ -1,0 +1,64 @@
+:root {
+  /* Colors */
+  --color-primary-black: rgb(19 25 33);
+  --color-primary-white: rgb(255, 255, 255);
+  --color-primary-orange: rgb(255 153 0);
+  --color-primary-grey: rgb(238, 238, 238);
+  --color-primary-darkgrey: rgb(86, 85, 85);
+  --color-primary-lightblue: rgb(234, 237, 237);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem equals 10px */
+}
+
+body {
+  letter-spacing: 0.1rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary-black);
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media screen and (min-width: 144em) {
+  html {
+    font-size: 75%;
+  }
+}
+@media screen and (max-width: 102.4em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media screen and (max-width: 76.8em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media screen and (max-width: 42.5em) {
+  html {
+    font-size: 43.75%;
+  }
+}

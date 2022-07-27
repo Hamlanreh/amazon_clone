@@ -1,0 +1,39 @@
+.category__productsHeading {
+  padding: 2rem 0;
+  margin: 2rem auto;
+  font-size: 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.category__productList {
+  max-width: 150rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 30rem));
+  justify-content: center;
+  gap: 2rem;
+}
+
+.category__productsBtnBox {
+  max-width: 150rem;
+  margin: 10rem auto 4rem;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.category__productsBtnBox > button {
+  background-color: var(--color-primary-orange);
+  padding: 1.5rem 2rem;
+  width: 20rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15rem;
+  border: none;
+  border-radius: 4px;
+}
+.category__productsBtnBox > button:last-of-type {
+  margin-left: auto;
+}

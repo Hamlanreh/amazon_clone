@@ -1,0 +1,18 @@
+.notfound {
+  width: 100%;
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.notfound h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+.notfound p {
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+}

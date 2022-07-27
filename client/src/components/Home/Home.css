@@ -1,0 +1,19 @@
+.home {
+  background-color: var(--color-primary-grey);
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__hero {
+  width: 100%;
+  z-index: 1;
+}
+
+.home__categoryList {
+  margin: -25rem auto 0;
+  padding-bottom: 10rem;
+  z-index: 100;
+}

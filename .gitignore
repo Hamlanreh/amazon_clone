@@ -1,0 +1,6 @@
+node_modules
+
+# Configuration file
+server/config/
+
+.DS_Store
