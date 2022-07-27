@@ -37,10 +37,9 @@ class Email {
       text: htmlToText.convert(html),
     };
 
-    await this.createTransporter()
-      .sendMail(mailOptions)
-      .then(() => console.log('Message successfully sent'))
-      .catch(() => console.log('Message not sent'));
+    await this.createTransporter().sendMail(mailOptions);
+    // .then(() => console.log('Message successfully sent'))
+    // .catch(() => console.log('Message not sent'));
   }
 
   async sendWelcome() {

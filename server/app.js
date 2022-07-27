@@ -51,10 +51,10 @@ app.use(compression());
 if (process.env.NODE_ENV !== 'production') morgan('dev');
 
 // Routes middlewares
-app.use((req, res, next) => {
-  console.log(`${req.method}: ${req.originalUrl}`);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(`${req.method}: ${req.originalUrl}`);
+//   next();
+// });
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/reviews', reviewRouter);

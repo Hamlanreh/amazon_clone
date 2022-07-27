@@ -27,7 +27,7 @@ export const createReview = createAsyncThunk(
         rating,
       });
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
 );
