@@ -30,6 +30,11 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.header('Cross-Origin-Resource-Policy', 'cross-origin');
+  next();
+});
+
 app.use(
   helmet({
     contentSecurityPolicy: {

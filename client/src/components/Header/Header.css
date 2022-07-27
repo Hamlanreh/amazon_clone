@@ -52,7 +52,7 @@
 
 .header__searchOption {
   background-color: var(--color-primary-grey);
-  width: 6rem;
+  width: 7rem;
   padding: 0 1rem;
   border-radius: 4px 0 0 4px;
   border-right: 1px solid var(--color-primary-black);
@@ -111,12 +111,12 @@
 }
 
 .cartTotal {
-  background-color: var(--color-primary-white);
-  color: var(--color-primary-black);
-  padding: 0.5rem 1rem;
+  background-color: var(--color-primary-orange);
   border-radius: 50%;
+  color: var(--color-primary-black);
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 800;
+  padding: 0.5rem 1rem;
   position: relative;
-  top: -20px;
+  top: -5px;
 }

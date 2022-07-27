@@ -35,8 +35,6 @@ a {
   color: var(--color-primary-black);
 }
 
-
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -54,11 +52,11 @@ code {
 }
 @media screen and (max-width: 76.8em) {
   html {
-    font-size: 50%;
+    font-size: 40%;
   }
 }
-@media screen and (max-width: 42.5em) {
+@media screen and (max-width: 43.5em) {
   html {
-    font-size: 43.75%;
+    font-size: 24.75%;
   }
 }
