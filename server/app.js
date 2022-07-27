@@ -41,7 +41,7 @@ app.use('/api', apiLimiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
-// app.use(express.static(`${__dirname}/../client/public`));
+app.use(express.static(`${__dirname}/../client/build`));
 
 app.use(hpp({ whitelist: ['price'] }));
 app.use(xss());
