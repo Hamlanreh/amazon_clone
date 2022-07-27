@@ -28,6 +28,7 @@ const Home = () => {
         className="home__hero"
         src="https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg"
         alt="Amazon hero"
+        crossorigin="anonymous"
       />
 
       <section className="home__categoryList">
