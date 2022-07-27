@@ -36,7 +36,7 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         scriptSrc: ["'self'", "'unsafe-inline'", 'https://js.stripe.com/v3'],
-        styleSrc: ["'self'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: [
           "'self'",
           'https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg',
