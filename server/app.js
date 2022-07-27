@@ -7,6 +7,7 @@ const rateLimit = require('express-rate-limit');
 const hpp = require('hpp');
 const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
+const compression = require('compression');
 ///////////////////////////////////////////////////////////
 const ErrorHandler = require('./utils/errorHandler');
 const errorMiddleware = require('./middlewares/error');
@@ -45,6 +46,7 @@ app.use(cookieParser());
 app.use(hpp({ whitelist: ['price'] }));
 app.use(xss());
 app.use(mongoSanitize());
+app.use(compression());
 
 if (process.env.NODE_ENV !== 'production') morgan('dev');
 
