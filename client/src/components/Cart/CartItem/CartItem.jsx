@@ -16,8 +16,7 @@ const CartItem = cartItem => {
     <div className="cartItem">
       <img
         className="cartItem__img"
-        src={require('../../../assets/images/default.jpg')}
-        // src={cartItem.photo}
+        src={cartItem.photo}
         alt="title"
       />
       <div className="cartItem__detail">

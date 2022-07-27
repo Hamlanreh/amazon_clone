@@ -11,12 +11,7 @@ const Product = product => {
 
   return (
     <article className="product">
-      <img
-        className="product__img"
-        src={require('../../assets/images/default.jpg')}
-        // src={product.photo}
-        alt="product title"
-      />
+      <img className="product__img" src={product.photo} alt="product title" />
 
       <Link to={`/product/${product.id}/reviews`}>
         <h4 className="product__title">{product.name}</h4>

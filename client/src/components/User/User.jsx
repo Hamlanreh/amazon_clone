@@ -15,11 +15,7 @@ const User = () => {
     <main className="user__section">
       <div>
         <aside className="user__aside">
-          <img
-            src={require('../../assets/images/default.jpg')}
-            // src={user.photo}
-            alt="username"
-          />
+          <img src={user.photo} alt="username" />
           <ul className="user__nav">
             <li
               className={
