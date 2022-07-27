@@ -20,6 +20,9 @@ const getStripe = async () => {
   return await stripePromise;
 };
 
+let stripe;
+(async () => (stripe = await getStripe()))();
+
 const Cart = () => {
   useDocumentTitle('Cart');
 
@@ -33,7 +36,6 @@ const Cart = () => {
   }, [dispatch]);
 
   const handleCheckout = async e => {
-    const stripe = await getStripe();
     dispatch(getCheckoutSession(cartItems));
     setTimeout(() => {
       stripe.redirectToCheckout({ sessionId: checkoutSession.id });
