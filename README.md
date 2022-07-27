@@ -1,6 +1,6 @@
 # Amazon Clone MERN
 
-[View Live Demo Here](http://localhost:3000/)
+[View Live Demo Here](https://amazon-clone-mern-dev.herokuapp.com/)
 
 ## Amazon clone application is an e-commerce shop built from scratch based on the Amazon website
 

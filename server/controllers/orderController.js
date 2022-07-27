@@ -44,8 +44,8 @@ exports.createCheckoutSesssion = catchAsync(async (req, res, next) => {
     customer_email: email,
     line_items: [...cartItems],
     mode: 'payment',
-    success_url: `http://localhost:3000/success`, // Payment success
-    cancel_url: `http://localhost:3000/cancel`, // Payment failure
+    success_url: `https://amazon-clone-mern-dev.herokuapp.com/success`, // Payment success
+    cancel_url: `https://amazon-clone-mern-dev.herokuapp.com/cancel`, // Payment failure
   });
 
   res.status(httpStatusCodes.OK).json({
