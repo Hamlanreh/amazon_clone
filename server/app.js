@@ -22,10 +22,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      'http://localhost:3000',
-      'https://amazon-clone-mern-dev.herokuapp.com',
-    ],
+    origin: '*',
     credentials: true,
   })
 );
