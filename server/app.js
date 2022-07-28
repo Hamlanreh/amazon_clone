@@ -33,6 +33,7 @@ app.use(
 app.use(
   helmet({
     crossOriginResourcePolicy: false,
+    crossOriginEmbeddederPolicy: false,
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
