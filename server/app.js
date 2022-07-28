@@ -50,8 +50,8 @@ app.use(
         frameSrc: ["'self'"],
       },
     },
-    crossOriginOpenerPolicy: { policy: 'cross-origin' },
-    crossOriginResourcePolicy: { policy: 'cross-origin' },
+    // crossOriginOpenerPolicy: { policy: 'cross-origin' },
+    // crossOriginResourcePolicy: { policy: 'cross-origin' },
   })
 );
 
