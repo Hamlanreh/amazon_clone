@@ -32,8 +32,6 @@ app.use(
 
 app.use(
   helmet({
-    crossOriginResourcePolicy: false,
-    crossOriginEmbeddederPolicy: false,
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
@@ -47,6 +45,8 @@ app.use(
         frameSrc: ["'self'"],
       },
     },
+    crossOriginResourcePolicy: { policy: 'cross-origin' },
+    crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
   })
 );
 

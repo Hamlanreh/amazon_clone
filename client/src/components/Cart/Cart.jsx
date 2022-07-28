@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { loadStripe } from '@stripe/stripe-js';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.css';
 
@@ -10,20 +9,7 @@ import CartItem from './CartItem/CartItem';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
-let stripePromise;
-const getStripe = async () => {
-  if (!stripePromise) {
-    stripePromise = loadStripe(
-      'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
-    );
-  }
-  return await stripePromise;
-};
-
-let stripe;
-(async () => (stripe = await getStripe()))();
-
-const Cart = () => {
+const Cart = stripe => {
   useDocumentTitle('Cart');
 
   const dispatch = useDispatch();
@@ -37,9 +23,7 @@ const Cart = () => {
 
   const handleCheckout = async e => {
     dispatch(getCheckoutSession(cartItems));
-    setTimeout(() => {
-      stripe.redirectToCheckout({ sessionId: checkoutSession.id });
-    }, 3000);
+    stripe.redirectToCheckout({ sessionId: checkoutSession.id });
   };
 
   return (

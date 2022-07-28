@@ -2,13 +2,15 @@ import React from 'react';
 import './ErrorBoundary.css';
 
 const ErrorView = ({ error, errorInfo }) => (
-  <div>
-    <h2>Something went wrong.</h2>
-    <details>
-      {error && error.toString()}
-      <br />
-      {error.componentStack}
-    </details>
+  <div className="error-section">
+    <div>
+      <h1>Something went wrong.</h1>
+      <details>
+        {error && error.toString()}
+        <br />
+        {error.componentStack}
+      </details>
+    </div>
   </div>
 );
 

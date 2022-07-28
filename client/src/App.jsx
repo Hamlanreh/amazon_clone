@@ -1,4 +1,5 @@
 import React from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
@@ -18,6 +19,16 @@ import Settings from './components/User/Settings/Settings';
 import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
+
+let stripePromise;
+const getStripe = async () => {
+  if (!stripePromise) {
+    stripePromise = loadStripe(
+      'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
+    );
+  }
+  return stripePromise;
+};
 
 const App = () => {
   return (
@@ -69,7 +80,7 @@ const App = () => {
             element={
               <>
                 <Header />
-                <Cart />
+                <Cart stripe={getStripe()} />
                 <Footer />
               </>
             }
