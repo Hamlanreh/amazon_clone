@@ -30,13 +30,9 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  res.header('Cross-Origin-Resource-Policy', 'cross-origin');
-  next();
-});
-
 app.use(
   helmet({
+    crossOriginResourcePolicy: false,
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
@@ -50,8 +46,6 @@ app.use(
         frameSrc: ["'self'"],
       },
     },
-    // crossOriginOpenerPolicy: { policy: 'cross-origin' },
-    // crossOriginResourcePolicy: { policy: 'cross-origin' },
   })
 );
 
