@@ -15,7 +15,7 @@ const User = () => {
     <main className="user__section">
       <div>
         <aside className="user__aside">
-          <img src={user.photo} alt="username" />
+          <img src={user.photo} alt={user.name} crossOrigin="anonymous" />
           <ul className="user__nav">
             <li
               className={

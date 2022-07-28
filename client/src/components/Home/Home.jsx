@@ -27,8 +27,8 @@ const Home = () => {
       <img
         className="home__hero"
         src="https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg"
-        alt="Amazon hero"
-        crossorigin="anonymous"
+        alt="Amazon hero banner"
+        crossOrigin="anonymous"
       />
 
       <section className="home__categoryList">

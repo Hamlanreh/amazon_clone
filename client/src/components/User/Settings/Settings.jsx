@@ -52,7 +52,7 @@ const Settings = () => {
         <h2>User information</h2>
 
         <div className="form__control">
-          <img src={user.photo} alt="username" />
+          <img src={user.photo} alt={user.name} crossOrigin="anonymous" />
           <div>
             <label>Upload user photo</label>
             <input

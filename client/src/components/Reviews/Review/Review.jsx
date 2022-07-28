@@ -46,11 +46,9 @@ const Review = ({ id, review, rating, user, createdAt }) => {
         <div>
           <img
             className="review__userImg"
-            src={
-              user.photo ||
-              'https://res.cloudinary.com/hamlanreh/image/upload/v1658823381/amazon_clone/uploads/userUpload/default_yrwm6n.jpg'
-            }
-            alt="username"
+            src={user.photo}
+            alt={user.name}
+            crossOrigin="anonymous"
           />
           <span className="review__username">{user.name}</span>
         </div>

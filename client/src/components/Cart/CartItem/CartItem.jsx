@@ -17,7 +17,8 @@ const CartItem = cartItem => {
       <img
         className="cartItem__img"
         src={cartItem.photo}
-        alt="title"
+        alt={cartItem.name}
+        crossOrigin="anonymous"
       />
       <div className="cartItem__detail">
         <h4 className="cartItem__heading">{cartItem.name}</h4>

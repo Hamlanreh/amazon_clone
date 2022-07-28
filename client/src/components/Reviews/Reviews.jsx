@@ -52,8 +52,9 @@ const Reviews = () => {
         <div className="reviews__product">
           <img
             className="reviews__productImg"
-            src={require('../../assets/images/default.jpg')}
-            alt="product name"
+            src={product.photo}
+            alt={product.name}
+            crossOrigin="anonymous"
           />
           <div className="reviews__productDetail">
             <h1>{product.name}</h1>
