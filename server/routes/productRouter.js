@@ -20,6 +20,7 @@ router.use(authController.protect);
 router
   .route('/')
   .post(
+    authController.restrictTo('admin'),
     productController.uploadProductPhoto,
     productController.filterData,
     productController.createProduct
@@ -29,11 +30,12 @@ router
   .route('/:id')
   .get(productController.getProduct)
   .patch(
+    authController.restrictTo('admin'),
     productController.uploadProductPhoto,
     productController.resizeProductPhoto,
     productController.filterData,
     productController.updateProduct
   )
-  .delete(productController.deleteProduct);
+  .delete(authController.restrictTo('admin'), productController.deleteProduct);
 
 module.exports = router;

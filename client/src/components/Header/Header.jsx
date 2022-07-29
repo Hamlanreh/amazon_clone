@@ -62,13 +62,6 @@ const Header = () => {
       <form className="header__search">
         <select className="header__searchOption">
           <option defaultValue="all">All</option>
-          {/* <option value="books">Books</option>
-          <option value="category">Category</option>
-          <option value="electronics">Electronics</option>
-          <option value="games">Games</option>
-          <option value="fashion">Fashion</option>
-          <option value="sport">Sport</option>
-          <option value="technology">Technology</option> */}
         </select>
         <input
           type="text"

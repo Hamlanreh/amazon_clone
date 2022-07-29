@@ -17,11 +17,13 @@ const productSchema = new mongoose.Schema(
       enum: {
         values: [
           'books',
+          'health',
+          'furniture',
           'electronics',
-          'technology',
           'fashion',
-          'games',
-          'sport',
+          'equipment',
+          'sports',
+          'kitchen',
         ],
         message:
           'Product must be categorized as (electronics, books, technology, games, sport, fashion)',

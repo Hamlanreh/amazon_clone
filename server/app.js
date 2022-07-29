@@ -25,6 +25,8 @@ app.use(
     origin: [
       'http://localhost:3000',
       'https://amazon-clone-mern-dev.herokuapp.com',
+      'https://js.stripe.com/v3',
+      'https://res.cloudinary.com',
     ],
     credentials: true,
   })
@@ -40,6 +42,7 @@ app.use(
         imgSrc: [
           "'self'",
           'https://m.media-amazon.com/images/I/61DUO0NqyyL._SX3000_.jpg',
+          'https://res.cloudinary.com',
         ],
         connectSrc: ["'self'"],
         frameSrc: ["'self'"],

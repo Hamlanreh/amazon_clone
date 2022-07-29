@@ -4,7 +4,7 @@ import './ErrorBoundary.css';
 const ErrorView = ({ error, errorInfo }) => (
   <div className="error-section">
     <div>
-      <h1>Something went wrong.</h1>
+      <h1>Something went wrong. 😟😞😡</h1>
       <details>
         {error && error.toString()}
         <br />
