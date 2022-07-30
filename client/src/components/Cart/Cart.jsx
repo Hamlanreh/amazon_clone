@@ -70,7 +70,7 @@ const Cart = stripe => {
             <p>
               Subtotal ({amount} items):
               <span>
-                <strong>${total}</strong>
+                <strong>${total.toFixed(2)}</strong>
               </span>
             </p>
           )}
