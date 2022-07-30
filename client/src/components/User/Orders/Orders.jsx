@@ -28,9 +28,15 @@ const Orders = () => {
     <div className="user__ordersBox">
       <h1>Customer's Orders</h1>
       <ul className="user__orders">
-        {orders.map(order => (
-          <OrderItem key={order._id} id={order._id} {...order} />
-        ))}
+        {orders.length > 1 ? (
+          orders.map(order => (
+            <OrderItem key={order._id} id={order._id} {...order} />
+          ))
+        ) : (
+          <div className="user__ordersEmpty">
+            <h2>You haven't ordered list is empty!</h2>
+          </div>
+        )}
       </ul>
 
       {/* <div className="orders__paginateBtn">

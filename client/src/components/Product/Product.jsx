@@ -33,7 +33,9 @@ const Product = product => {
 
       <div className="product__priceBox">
         <p className="product__price">
-          <sup>$</sup>
+          <sup>
+            <strong>$</strong>
+          </sup>
           <span>{Math.trunc(product.price)}</span>
           <sup>{`${product.price}`.split('.')[1]}</sup>
         </p>

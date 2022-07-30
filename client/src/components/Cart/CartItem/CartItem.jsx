@@ -29,7 +29,8 @@ const CartItem = cartItem => {
           <span>{cartItem.ratingsQuantity}</span>
         </p>
         <p className="cartItem__price">
-          $<span>{cartItem.price}</span>
+          <strong>$</strong>
+          <span>{cartItem.price}</span>
         </p>
 
         <div className="cartItem__totalItems">

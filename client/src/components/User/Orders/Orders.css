@@ -1,6 +1,9 @@
 .user__orders {
   list-style: none;
 }
+.user__ordersEmpty {
+  font-size: 3rem;
+}
 
 .orders__paginateBtn {
   width: 100%;

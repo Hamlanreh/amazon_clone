@@ -20,12 +20,12 @@
   padding: 2rem;
 }
 .user__aside img {
+  border-radius: 5px;
   display: block;
+  height: 25rem;
+  margin: 1rem auto 2rem;
   width: 25rem;
-  height: 20rem;
-  margin: 1rem auto;
-  margin-bottom: 2rem;
-  border-radius: 10px;
+  object-fit: cover;
 }
 
 .user__nav {
