@@ -49,7 +49,7 @@ app.use(
       },
     },
     crossOriginResourcePolicy: { policy: 'cross-origin' },
-    crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
+    // crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
   })
 );
 

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './Reviews.css';
 
 import useDocumentTitle from '../../utils/useDocumentTitle';
 
 import Review from './Review/Review';
+import { addItem } from '../../features/cart/cartSlice';
 import { getProduct } from '../../features/product/productSlice';
 import {
   getAllReviews,
@@ -58,12 +60,27 @@ const Reviews = () => {
           />
           <div className="reviews__productDetail">
             <h1>{product.name}</h1>
-            <p className="review__ratings">
-              {new Array(Math.floor(product.ratingsAverage)).fill('⭐')}
-            </p>
-            <p className="review__quantity">
-              {product.ratingsQuantity} ratings
-            </p>
+            <div className="review_data">
+              <p className="review__ratings">
+                {new Array(Math.floor(product.ratingsAverage)).fill('⭐')}
+              </p>
+              <p className="review__quantity">
+                {product.ratingsQuantity} ratings
+              </p>
+            </div>
+            <button
+              className="review__addToCartBtn"
+              onClick={() => dispatch(addItem({ ...product, amount: 1 }))}
+            >
+              <span>Add to Cart</span>
+              <ShoppingCartOutlinedIcon
+                sx={{
+                  fontSize: '2.4rem',
+                  marginLeft: '1rem',
+                  color: 'var(--color-primary-black)',
+                }}
+              />
+            </button>
           </div>
         </div>
 
