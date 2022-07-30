@@ -68,6 +68,18 @@ const Reviews = () => {
                 {product.ratingsQuantity} ratings
               </p>
             </div>
+            <div className="review__priceBox">
+              <p className="review__price">
+                <sup>$</sup>
+                <span>{Math.trunc(product.price)}</span>
+                <sup>{`${product.price}`.split('.')[1]}</sup>
+              </p>
+              <p className="review__discount">
+                <span>
+                  <strike>${product.priceDiscount}</strike>
+                </span>
+              </p>
+            </div>
             <button
               className="review__addToCartBtn"
               onClick={() => dispatch(addItem({ ...product, amount: 1 }))}

@@ -8,10 +8,11 @@ const hpp = require('hpp');
 const xss = require('xss-clean');
 const mongoSanitize = require('express-mongo-sanitize');
 const compression = require('compression');
+const path = require('path');
 ///////////////////////////////////////////////////////////
-const ErrorHandler = require('./utils/errorHandler');
+// const ErrorHandler = require('./utils/errorHandler');
 const errorMiddleware = require('./middlewares/error');
-const httpStatusCodes = require('./utils/httpStatusCodes');
+// const httpStatusCodes = require('./utils/httpStatusCodes');
 ///////////////////////////////////////////////////////////
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
@@ -49,7 +50,7 @@ app.use(
       },
     },
     crossOriginResourcePolicy: { policy: 'cross-origin' },
-    // crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
+    crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
   })
 );
 
@@ -86,14 +87,17 @@ app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/orders', orderRouter);
 
 // Unhandled routes middleware
-app.all('*', (req, res, next) => {
-  next(
-    new ErrorHandler(
-      `Can't find ${req.originalUrl} on this server.`,
-      httpStatusCodes.NOT_FOUND
-    )
-  );
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+// app.all('*', (req, res, next) => {
+//   next(
+//     new ErrorHandler(
+//       `Can't find ${req.originalUrl} on this server.`,
+//       httpStatusCodes.NOT_FOUND
+//     )
+//   );
+// });
 
 // Error handler middleware
 app.use(errorMiddleware);

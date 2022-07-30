@@ -61,6 +61,24 @@
   display: inline-block;
 }
 
+.review__priceBox {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+.review__price {
+  font-size: 3rem;
+  margin-right: 1rem;
+}
+.review__price sup {
+  font-size: 1.5rem;
+}
+
+.review__discount > span {
+  font-size: 1.3rem;
+}
+
 .review__addToCartBtn {
   background-color: var(--color-primary-orange);
   width: 100%;
