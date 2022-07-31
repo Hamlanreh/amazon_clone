@@ -49,8 +49,8 @@ app.use(
         frameSrc: ["'self'"],
       },
     },
-    crossOriginResourcePolicy: { policy: 'cross-origin' },
-    crossOriginEmbeddederPolicy: { policy: 'cross-origin' },
+    crossOriginResourcePolicy: false,
+    crossOriginEmbedderPolicy: false,
   })
 );
 
