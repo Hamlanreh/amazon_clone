@@ -32,12 +32,6 @@ const orderSchema = new mongoose.Schema({
     default: Date.now,
     required: [true, 'Order must have date'],
   },
-  status: {
-    type: String,
-    enum: ['incomplete', 'completed'],
-    default: 'incomplete',
-    select: false,
-  },
 });
 
 // Middlewares

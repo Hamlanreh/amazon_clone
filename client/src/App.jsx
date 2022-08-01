@@ -23,7 +23,7 @@ import NotFound404 from './components/NotFound404/NotFound404';
 let stripePromise;
 const getStripe = async () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(
+    stripePromise = await loadStripe(
       'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
     );
   }
@@ -80,7 +80,7 @@ const App = () => {
             element={
               <>
                 <Header />
-                <Cart stripe={getStripe()} />
+                <Cart stripePromise={getStripe()} />
                 <Footer />
               </>
             }

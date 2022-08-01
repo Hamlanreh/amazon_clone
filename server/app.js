@@ -49,8 +49,8 @@ app.use(
         frameSrc: ["'self'", 'https://js.stripe.com'],
       },
     },
-    // crossOriginResourcePolicy: false,
     crossOriginEmbedderPolicy: false,
+    // crossOriginResourcePolicy: false,
   })
 );
 

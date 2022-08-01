@@ -10,7 +10,10 @@ const httpStatusCodes = require('../utils/httpStatusCodes');
 const filterFields = require('../utils/filterFields');
 
 exports.createCheckoutSesssion = catchAsync(async (req, res, next) => {
-  const { items } = req.body;
+  const items = req.body.items.map(item => ({
+    product: item.id,
+    quantity: item.amount,
+  }));
   const { email } = await User.findById(req.user.id, { email: 1 });
 
   if (!items)
@@ -37,8 +40,9 @@ exports.createCheckoutSesssion = catchAsync(async (req, res, next) => {
       quantity: item.quantity,
     };
   });
-  const cartItems = await Promise.all(promiseItems);
 
+  // Create stripe session with cart items
+  const cartItems = await Promise.all(promiseItems);
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     customer_email: email,
@@ -47,6 +51,9 @@ exports.createCheckoutSesssion = catchAsync(async (req, res, next) => {
     success_url: `https://amazon-clone-mern-dev.herokuapp.com/success`, // Payment success
     cancel_url: `https://amazon-clone-mern-dev.herokuapp.com/cancel`, // Payment failure
   });
+
+  // Create a new order
+  await Order.create({ user: req.user.id, items: items });
 
   res.status(httpStatusCodes.OK).json({
     status: 'success',
@@ -60,7 +67,7 @@ exports.filterData = (req, res, next) => {
 };
 
 exports.filterUpdateData = (req, res, next) => {
-  req.body = filterFields(req.body, 'status');
+  // req.body = filterFields(req.body, 'status');
   next();
 };
 

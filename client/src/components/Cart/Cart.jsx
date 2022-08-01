@@ -9,7 +9,7 @@ import CartItem from './CartItem/CartItem';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
-const Cart = stripe => {
+const Cart = ({ stripePromise }) => {
   useDocumentTitle('Cart');
 
   const dispatch = useDispatch();
@@ -22,8 +22,11 @@ const Cart = stripe => {
   }, [dispatch]);
 
   const handleCheckout = async e => {
+    const stripe = await stripePromise;
     dispatch(getCheckoutSession(cartItems));
-    stripe.redirectToCheckout({ sessionId: checkoutSession.id });
+    setTimeout(() => {
+      stripe.redirectToCheckout({ sessionId: checkoutSession.id });
+    }, 1000 * 2);
   };
 
   return (

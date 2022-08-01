@@ -11,12 +11,8 @@ export const getCheckoutSession = createAsyncThunk(
   'stripe/getCheckoutSession',
   async items => {
     try {
-      const newItems = items.map(item => ({
-        product: item.id,
-        quantity: item.amount,
-      }));
       const { data } = await axios.post('/orders/create-checkout-session', {
-        items: newItems,
+        items,
       });
       return await data.session;
     } catch (error) {

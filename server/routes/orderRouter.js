@@ -20,7 +20,7 @@ router
 router
   .route('/:id')
   .get(orderController.getOrder)
-  .patch(orderController.filterUpdateData, orderController.updateOrder)
-  .delete(orderController.deleteOrder);
+  .patch(authController.restrictTo('admin'), orderController.filterUpdateData, orderController.updateOrder)
+  .delete(authController.restrictTo('admin'), orderController.deleteOrder);
 
 module.exports = router;

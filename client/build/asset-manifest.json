@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.1972dff6.css",
-    "main.js": "/static/js/main.87bf7c3c.js",
+    "main.css": "/static/css/main.a3534f4a.css",
+    "main.js": "/static/js/main.8cc66dc6.js",
     "static/media/amazon-logo.svg": "/static/media/amazon-logo.e02ff81ea007a246d82ee89d0d9322aa.svg",
     "index.html": "/index.html",
-    "main.1972dff6.css.map": "/static/css/main.1972dff6.css.map",
-    "main.87bf7c3c.js.map": "/static/js/main.87bf7c3c.js.map"
+    "main.a3534f4a.css.map": "/static/css/main.a3534f4a.css.map",
+    "main.8cc66dc6.js.map": "/static/js/main.8cc66dc6.js.map"
   },
   "entrypoints": [
-    "static/css/main.1972dff6.css",
-    "static/js/main.87bf7c3c.js"
+    "static/css/main.a3534f4a.css",
+    "static/js/main.8cc66dc6.js"
   ]
 }

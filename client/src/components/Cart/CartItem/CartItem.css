@@ -11,9 +11,9 @@
 
 .cartItem__img {
   width: 40rem;
-  height: 15rem;
+  height: 17rem;
   margin-right: 2rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .cartItem__detail {
