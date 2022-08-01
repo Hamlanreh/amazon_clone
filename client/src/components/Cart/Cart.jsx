@@ -22,11 +22,9 @@ const Cart = ({ stripePromise }) => {
   }, [dispatch]);
 
   const handleCheckout = async e => {
-    const stripe = await stripePromise;
     dispatch(getCheckoutSession(cartItems));
-    setTimeout(() => {
-      stripe.redirectToCheckout({ sessionId: checkoutSession.id });
-    }, 1000 * 2);
+    const stripe = await stripePromise;
+    stripe.redirectToCheckout({ sessionId: checkoutSession.id });
   };
 
   return (
