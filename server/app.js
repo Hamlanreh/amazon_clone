@@ -49,7 +49,7 @@ app.use(
         frameSrc: ["'self'"],
       },
     },
-    crossOriginResourcePolicy: false,
+    // crossOriginResourcePolicy: false,
     crossOriginEmbedderPolicy: false,
   })
 );
