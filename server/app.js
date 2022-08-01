@@ -46,7 +46,7 @@ app.use(
           'https://res.cloudinary.com',
         ],
         connectSrc: ["'self'"],
-        frameSrc: ["'self'"],
+        frameSrc: ["'self'", 'https://js.stripe.com'],
       },
     },
     // crossOriginResourcePolicy: false,
