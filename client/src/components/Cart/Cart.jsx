@@ -10,6 +10,9 @@ import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
 const Cart = ({ stripePromise }) => {
+  let stripe;
+  (async () => (stripe = await stripePromise))();
+
   useDocumentTitle('Cart');
 
   const dispatch = useDispatch();
@@ -23,7 +26,6 @@ const Cart = ({ stripePromise }) => {
 
   const handleCheckout = async e => {
     dispatch(getCheckoutSession(cartItems));
-    const stripe = await stripePromise;
     stripe.redirectToCheckout({ sessionId: checkoutSession.id });
   };
 

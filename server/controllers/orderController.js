@@ -52,9 +52,6 @@ exports.createCheckoutSesssion = catchAsync(async (req, res, next) => {
     cancel_url: `https://amazon-clone-mern-dev.herokuapp.com/cancel`, // Payment failure
   });
 
-  // Create a new order
-  await Order.create({ user: req.user.id, items: items });
-
   res.status(httpStatusCodes.OK).json({
     status: 'success',
     session,
@@ -67,7 +64,7 @@ exports.filterData = (req, res, next) => {
 };
 
 exports.filterUpdateData = (req, res, next) => {
-  // req.body = filterFields(req.body, 'status');
+  req.body = filterFields(req.body, 'status');
   next();
 };
 

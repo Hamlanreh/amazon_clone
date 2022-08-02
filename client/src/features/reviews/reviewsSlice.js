@@ -3,6 +3,7 @@ import axios from '../../utils/axios';
 
 const initialState = {
   reviews: [],
+  results: 0,
   isLoading: true,
 };
 
@@ -11,7 +12,7 @@ export const getAllReviews = createAsyncThunk(
   async productId => {
     try {
       const { data } = await axios.get(`/products/${productId}/reviews`);
-      return data.data;
+      return { data: data.data, length: data.length };
     } catch (error) {
       return error;
     }
@@ -65,8 +66,9 @@ const reviewsSlice = createSlice({
     [getAllReviews.pending]: state => {
       state.isLoading = true;
     },
-    [getAllReviews.fulfilled]: (state, action) => {
-      state.reviews = action.payload;
+    [getAllReviews.fulfilled]: (state, { payload }) => {
+      state.results = payload.length;
+      state.reviews = payload.data;
       state.isLoading = false;
     },
     [getAllReviews.rejected]: state => {

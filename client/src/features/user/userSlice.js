@@ -88,6 +88,17 @@ export const updatePassword = createAsyncThunk(
   }
 );
 
+export const deactivateAccount = createAsyncThunk(
+  'user/deactivateAccount',
+  async () => {
+    try {
+      await axios.delete('users/deactivate');
+    } catch (error) {
+      return error;
+    }
+  }
+);
+
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -176,6 +187,18 @@ const userSlice = createSlice({
       state.isLoading = false;
     },
     [updatePassword.rejected]: state => {
+      state.isLoading = false;
+      state.user = {};
+    },
+
+    [deactivateAccount.pending]: state => {
+      state.isLoading = true;
+    },
+    [deactivateAccount.fulfilled]: state => {
+      state.user = {};
+      state.isLoading = false;
+    },
+    [deactivateAccount.rejected]: state => {
       state.isLoading = false;
       state.user = {};
     },

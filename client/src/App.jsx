@@ -16,6 +16,7 @@ import Reviews from './components/Reviews/Reviews';
 import User from './components/User/User';
 import Orders from './components/User/Orders/Orders';
 import Settings from './components/User/Settings/Settings';
+import Deactivate from './components/User/Deactivate/Deactivate';
 import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
@@ -110,6 +111,7 @@ const App = () => {
             <Route index element={<Orders />} />
             <Route path="orders" element={<Orders />} />
             <Route path="settings" element={<Settings />} />
+            <Route path="deactivate" element={<Deactivate />} />
           </Route>
 
           <Route path="/success" element={<PaymentSuccess />} />

@@ -3,6 +3,7 @@ import axios from '../../utils/axios';
 
 const initialState = {
   topProducts: [],
+  results: 0,
   isLoading: true,
 };
 
@@ -11,7 +12,7 @@ export const getTopProducts = createAsyncThunk(
   async () => {
     try {
       const { data } = await axios.get(`/products/top-category-products`);
-      return data.data;
+      return { data: data.data, length: data.length };
     } catch (error) {
       return error;
     }
@@ -27,7 +28,8 @@ const topProductsSlice = createSlice({
       state.isLoading = true;
     },
     [getTopProducts.fulfilled]: (state, { payload }) => {
-      state.topProducts = payload;
+      state.results = payload.length;
+      state.topProducts = payload.data;
       state.isLoading = false;
     },
     [getTopProducts.rejected]: state => {

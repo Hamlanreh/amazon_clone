@@ -3,6 +3,7 @@ import axios from '../../utils/axios';
 
 const initialState = {
   search: [],
+  results: 0,
   isLoading: true,
 };
 
@@ -11,7 +12,7 @@ export const searchProducts = createAsyncThunk(
   async name => {
     try {
       const { data } = await axios.get(`/products?name=${name}`);
-      return data.data;
+      return { data: data.data, length: data.length };
     } catch (error) {
       return error;
     }
@@ -26,8 +27,9 @@ const searchSlice = createSlice({
     [searchProducts.pending]: state => {
       state.isLoading = true;
     },
-    [searchProducts.fulfilled]: (state, action) => {
-      state.search = action.payload;
+    [searchProducts.fulfilled]: (state, { payload }) => {
+      state.results = payload.length;
+      state.search = payload.data;
       state.isLoading = false;
     },
     [searchProducts.rejected]: state => {
