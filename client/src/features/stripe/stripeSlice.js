@@ -35,6 +35,7 @@ const stripeSlice = createSlice({
     },
     [getCheckoutSession.rejected]: state => {
       state.isLoading = false;
+      state.checkoutSession = {};
     },
   },
 });

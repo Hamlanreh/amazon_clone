@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.css';
@@ -9,10 +9,11 @@ import CartItem from './CartItem/CartItem';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
-const Cart = ({ stripePromise }) => {
-  let stripe;
-  (async () => (stripe = await stripePromise))();
+// Stores the stripe object
+let stripe;
 
+const Cart = ({ stripePromise }) => {
+  (async () => (stripe = await stripePromise))();
   useDocumentTitle('Cart');
 
   const dispatch = useDispatch();
@@ -20,13 +21,19 @@ const Cart = ({ stripePromise }) => {
   const { cartItems, amount, total } = useSelector(state => state.cart);
   const { checkoutSession } = useSelector(state => state.stripe);
 
+  const [disabled, setDisabled] = useState(false);
+
   useEffect(() => {
     dispatch(calculateTotals());
-  }, [dispatch]);
+  }, [dispatch, stripePromise]);
 
   const handleCheckout = async e => {
-    dispatch(getCheckoutSession(cartItems));
-    stripe.redirectToCheckout({ sessionId: checkoutSession.id });
+    setDisabled(true);
+    setTimeout(() => {
+      dispatch(getCheckoutSession(cartItems));
+      stripe.redirectToCheckout({ sessionId: checkoutSession.id });
+    }, 500);
+    setDisabled(false);
   };
 
   return (
@@ -83,6 +90,7 @@ const Cart = ({ stripePromise }) => {
               className="cart__checkoutBtn"
               type="button"
               onClick={handleCheckout}
+              disabled={disabled}
             >
               Proceed to Checkout
             </button>
