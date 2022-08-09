@@ -67,7 +67,7 @@ app.use('/api', apiLimiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
-app.use(express.static(`${__dirname}/../client/build`));
+// app.use(express.static(`${__dirname}/../client/build`));
 
 app.use(hpp({ whitelist: ['price'] }));
 app.use(xss());
@@ -77,10 +77,10 @@ app.use(compression());
 if (process.env.NODE_ENV !== 'production') morgan('dev');
 
 // Routes middlewares
-// app.use((req, res, next) => {
-//   console.log(`${req.method}: ${req.originalUrl}`);
-//   next();
-// });
+app.use((req, res, next) => {
+  console.log(`${req.method}: ${req.originalUrl}`);
+  next();
+});
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/reviews', reviewRouter);

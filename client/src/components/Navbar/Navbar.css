@@ -1,0 +1,60 @@
+.navbar {
+  background-color: rgba(19, 25, 33, 0.78);
+  width: 100%;
+  padding: 1rem;
+  position: relative;
+  z-index: 100;
+}
+.navbar__toggleBtn {
+  background-color: transparent;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+}
+.navbar__toggleIcon {
+  content: '';
+  background-color: white;
+  width: 3rem;
+  height: 0.4rem;
+  border: none;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar__toggleIcon::before,
+.navbar__toggleIcon::after {
+  background-color: inherit;
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 0.4rem;
+  border-radius: 4px;
+  position: absolute;
+}
+.navbar__toggleIcon::before {
+  top: -0.9rem;
+}
+.navbar__toggleIcon::after {
+  top: 0.9rem;
+}
+
+.navbar__toggleList {
+  display: none;
+  list-style: none;
+  background-color: rgb(19 25 33);
+  position: absolute;
+  top: 5rem;
+  padding: 1rem;
+  width: 45rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.navbar__toggleLink {
+  display: block;
+  padding: 1rem 0;
+  font-size: 2.4rem;
+  color: white;
+}

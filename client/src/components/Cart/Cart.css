@@ -81,12 +81,14 @@
 
 .cart__clearBtn {
   background-color: var(--color-primary-orange);
-  padding: 1rem 0;
-  margin-top: 4rem;
   width: 35rem;
-  border: none;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  text-align: center;
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 800;
+  display: inline-block;
+  border: none;
 }
 
 .cart__subtotal {
@@ -107,8 +109,10 @@
   width: 35rem;
   margin-top: 1rem;
   padding: 1rem 2rem;
+  text-align: center;
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 800;
+  display: inline-block;
   border: none;
   transition: all 0.2s ease;
 }

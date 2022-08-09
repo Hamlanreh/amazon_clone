@@ -26,7 +26,6 @@ const CartItem = cartItem => {
           <span>
             {new Array(Math.round(cartItem.ratingsAverage)).fill('⭐')}
           </span>
-          <span>{cartItem.ratingsQuantity}</span>
         </p>
         <p className="cartItem__price">
           <strong>$</strong>

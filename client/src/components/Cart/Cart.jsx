@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.css';
@@ -7,34 +7,16 @@ import useDocumentTitle from '../../utils/useDocumentTitle';
 
 import CartItem from './CartItem/CartItem';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
-import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
-// Stores the stripe object
-let stripe;
-
-const Cart = ({ stripePromise }) => {
-  (async () => (stripe = await stripePromise))();
+const Cart = () => {
   useDocumentTitle('Cart');
-
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector(state => state.user);
   const { cartItems, amount, total } = useSelector(state => state.cart);
-  const { checkoutSession } = useSelector(state => state.stripe);
-
-  const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
     dispatch(calculateTotals());
-  }, [dispatch, stripePromise]);
-
-  const handleCheckout = async e => {
-    setDisabled(true);
-    setTimeout(() => {
-      dispatch(getCheckoutSession(cartItems));
-      stripe.redirectToCheckout({ sessionId: checkoutSession.id });
-    }, 500);
-    setDisabled(false);
-  };
+  }, [dispatch]);
 
   return (
     <section className="cart">
@@ -80,20 +62,15 @@ const Cart = ({ stripePromise }) => {
             <p>
               Subtotal ({amount} items):
               <span>
-                <strong>${total.toFixed(2)}</strong>
+                <strong> ${total.toFixed(2)}</strong>
               </span>
             </p>
           )}
 
           {isAuthenticated && cartItems.length > 0 && (
-            <button
-              className="cart__checkoutBtn"
-              type="button"
-              onClick={handleCheckout}
-              disabled={disabled}
-            >
+            <Link className="cart__checkoutBtn" to="/checkout">
               Proceed to Checkout
-            </button>
+            </Link>
           )}
         </div>
 

@@ -15,5 +15,5 @@
 .home__categoryList {
   margin: -25rem auto 0;
   padding-bottom: 10rem;
-  z-index: 100;
+  z-index: 1;
 }

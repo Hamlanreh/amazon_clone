@@ -95,7 +95,7 @@ const Header = () => {
         )}
       </div>
 
-      <Link to={user?._id ? `/user` : `/`}>
+      <Link to="/orders">
         <div className="header__option">
           <span className="header__optionTop">Returns</span>
           <span className="header__optionBot">&amp; Orders</span>

@@ -19,16 +19,6 @@ const User = () => {
           <ul className="user__nav">
             <li
               className={
-                window.location.pathname === '/user' ||
-                window.location.pathname === '/user/orders'
-                  ? 'active'
-                  : ''
-              }
-            >
-              <Link to="orders">Orders</Link>
-            </li>
-            <li
-              className={
                 window.location.pathname === '/user/settings' ? 'active' : ''
               }
             >

@@ -2,10 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Home.css';
 
-import useDocumentTitle from '../../utils/useDocumentTitle';
-
-import Loading from '../Loading/Loading';
 import Category from './Category/Category';
+import Loading from '../Loading/Loading';
+import useDocumentTitle from '../../utils/useDocumentTitle';
 import { getTopProducts } from '../../features/topProducts/topProductsSlice';
 
 const Home = () => {

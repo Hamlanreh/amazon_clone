@@ -1,0 +1,24 @@
+.orders {
+  background-color: #eee;
+  min-height: 95vh;
+  padding: 2rem;
+}
+
+.orders__heading {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+.orders__heading > h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  padding: 1rem 0;
+}
+
+.orders__content {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.orders__list {
+  list-style: none;
+}

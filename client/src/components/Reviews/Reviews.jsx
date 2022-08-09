@@ -75,9 +75,7 @@ const Reviews = () => {
                 <sup>{`${product.price}`.split('.')[1]}</sup>
               </p>
               <p className="review__discount">
-                <span>
-                  <strike>${product.priceDiscount}</strike>
-                </span>
+                <span>{/* <strike>${product.priceDiscount}</strike> */}</span>
               </p>
             </div>
             <button

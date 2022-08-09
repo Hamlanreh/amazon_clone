@@ -1,10 +1,11 @@
 import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
+import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Search from './components/Search/Search';
 import CategoryProducts from './components/CategoryProducts/CategoryProducts';
@@ -13,23 +14,24 @@ import Signup from './components/Signup/Signup';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Reviews from './components/Reviews/Reviews';
-import User from './components/User/User';
-import Orders from './components/User/Orders/Orders';
-import Settings from './components/User/Settings/Settings';
-import Deactivate from './components/User/Deactivate/Deactivate';
+import Checkout from './components/Checkout/Checkout';
+import Orders from './components/Orders/Orders';
+// import User from './components/User/User';
+// import Settings from './components/User/Settings/Settings';
+// import Deactivate from './components/User/Deactivate/Deactivate';
 import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
 
-let stripePromise;
-const getStripe = async () => {
-  if (!stripePromise) {
-    stripePromise = await loadStripe(
-      'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
-    );
-  }
-  return stripePromise;
-};
+// let stripePromise;
+// const getStripe = async () => {
+//   if (!stripePromise) {
+//     stripePromise = await loadStripe(
+//       'pk_test_51LH06mJ4f7QTW0t8xGUCuUX0Id6ckcelLdPfE4iC6AaPvDYRcL3R8Z8vFdctXTzZ2jceSwEHPROk16UGqBbK3Zjs00lBdGrkOu'
+//     );
+//   }
+//   return stripePromise;
+// };
 
 const App = () => {
   return (
@@ -42,6 +44,7 @@ const App = () => {
             element={
               <>
                 <Header />
+                <Navbar />
                 <Home />
                 <Footer />
               </>
@@ -53,6 +56,7 @@ const App = () => {
             element={
               <>
                 <Header />
+                <Navbar />
                 <Search />
                 <Footer />
               </>
@@ -70,6 +74,7 @@ const App = () => {
             element={
               <>
                 <Header />
+                <Navbar />
                 <CategoryProducts />
                 <Footer />
               </>
@@ -81,7 +86,20 @@ const App = () => {
             element={
               <>
                 <Header />
-                <Cart stripePromise={getStripe()} />
+                <Navbar />
+                <Cart />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Header />
+                <Navbar />
+                <Checkout />
                 <Footer />
               </>
             }
@@ -92,6 +110,7 @@ const App = () => {
             element={
               <>
                 <Header />
+                <Navbar />
                 <Reviews />
                 <Footer />
               </>
@@ -99,20 +118,32 @@ const App = () => {
           />
 
           <Route
+            path="/orders"
+            element={
+              <>
+                <Header />
+                <Navbar />
+                <Orders />
+                <Footer />
+              </>
+            }
+          />
+
+          {/* <Route
             path="/user"
             element={
               <>
                 <Header />
+                <Navbar />
                 <User />
                 <Footer />
               </>
             }
           >
-            <Route index element={<Orders />} />
-            <Route path="orders" element={<Orders />} />
+            <Route index element={<Settings />} />
             <Route path="settings" element={<Settings />} />
             <Route path="deactivate" element={<Deactivate />} />
-          </Route>
+          </Route> */}
 
           <Route path="/success" element={<PaymentSuccess />} />
 
@@ -123,6 +154,7 @@ const App = () => {
             element={
               <>
                 <Header />
+                <Navbar />
                 <NotFound404 />
                 <Footer />
               </>

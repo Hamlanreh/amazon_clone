@@ -86,12 +86,16 @@ exports.getAllOrders = catchAsync(async (req, res, next) => {
       'totalPrice',
       'createdAt'
     )
-    .sort()
+    .sort('-createdAt')
     .fields()
     .paginate();
   // console.log(apiFeatures);
 
-  const docs = await apiFeatures.query;
+  const query = apiFeatures.query.populate({
+    path: 'items',
+    populate: { path: 'product', select: 'name photo price ratingsAverage' },
+  });
+  const docs = await query;
 
   if (!docs)
     return next(
