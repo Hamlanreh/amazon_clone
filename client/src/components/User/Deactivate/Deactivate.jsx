@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Deactivate.css';
 
+import useDocumentTitle from '../../../utils/useDocumentTitle';
 import { deactivateAccount } from '../../../features/user/userSlice';
 
 const Deactivate = () => {
+  useDocumentTitle('Deactivate your account');
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user } = useSelector(state => state.user);

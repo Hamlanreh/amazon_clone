@@ -31,7 +31,7 @@ const Orders = () => {
         {isAuthenticated && (
           <ul className="orders__list">
             {orders.map(order => (
-              <OrderItem order={order} />
+              <OrderItem key={order._id} order={order} />
             ))}
           </ul>
         )}

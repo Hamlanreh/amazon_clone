@@ -14,13 +14,13 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user, isAuthenticated } = useSelector(state => state.user);
-  const { amount } = useSelector(state => state.cart);
+  const { cartItems, amount } = useSelector(state => state.cart);
 
   const [searchText, setSearchText] = useState('');
 
   useEffect(() => {
     dispatch(calculateTotals());
-  });
+  }, [dispatch, cartItems]);
 
   useEffect(() => {
     dispatch(getMe());
@@ -77,11 +77,6 @@ const Header = () => {
           <SearchOutlinedIcon sx={{ fontSize: '3rem' }} />
         </button>
       </form>
-
-      <div className="header__country">
-        {/* TODO: Optional  */}
-        {/* Contains user current country */}
-      </div>
 
       <div className="header__option" onClick={handleAuth}>
         <span className="header__optionTop">

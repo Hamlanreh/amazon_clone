@@ -1,6 +1,8 @@
 import React from 'react';
 import './OrderItem.css';
 
+import OrderProduct from './OrderProduct/OrderProduct';
+
 const OrderItem = ({ order }) => {
   return (
     <li className="order__item">
@@ -13,21 +15,11 @@ const OrderItem = ({ order }) => {
       </div>
       <ul className="order__productList">
         {order.items.map(({ product, quantity }) => (
-          <li className="order__product">
-            <img
-              src={product.photo}
-              alt={product.name}
-              className="order__productImg"
-            />
-            <div className="order__productDetails">
-              <h4 className="order__productName">{product.name}</h4>
-              <p>${product.price}</p>
-              <p className="order__productRating">
-                {new Array(Math.round(product.ratingsAverage)).fill('⭐')}
-              </p>
-              <p>Quantity: {quantity}</p>
-            </div>
-          </li>
+          <OrderProduct
+            key={product._id}
+            product={product}
+            quantity={quantity}
+          />
         ))}
       </ul>
     </li>

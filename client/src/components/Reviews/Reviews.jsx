@@ -5,7 +5,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import './Reviews.css';
 
 import useDocumentTitle from '../../utils/useDocumentTitle';
-
+import Loading from '../Loading/Loading';
 import Review from './Review/Review';
 import { addItem } from '../../features/cart/cartSlice';
 import { getProduct } from '../../features/product/productSlice';
@@ -33,6 +33,7 @@ const Reviews = () => {
 
   const handleCreateReview = e => {
     e.preventDefault();
+    
     if (!review) return;
     dispatch(createReview({ productId, review, rating }));
     setReview('');
@@ -41,12 +42,7 @@ const Reviews = () => {
     window.location.reload();
   };
 
-  if (isLoading)
-    return (
-      <div className="loading">
-        <h1>Loading...</h1>
-      </div>
-    );
+  if (isLoading) return <Loading />;
 
   return (
     <main className="reviews">

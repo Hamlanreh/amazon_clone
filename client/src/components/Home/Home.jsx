@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Home.css';
 
-import Category from './Category/Category';
 import Loading from '../Loading/Loading';
+import Category from './Category/Category';
 import useDocumentTitle from '../../utils/useDocumentTitle';
 import { getTopProducts } from '../../features/topProducts/topProductsSlice';
 
 const Home = () => {
-  useDocumentTitle('E-Commerce store for all top products');
-
   const dispatch = useDispatch();
+  useDocumentTitle('E-Commerce store for all top products');
   const { topProducts: categories, isLoading } = useSelector(
     state => state.topProducts
   );

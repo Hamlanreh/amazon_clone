@@ -14,8 +14,6 @@ const Search = () => {
   const dispatch = useDispatch();
   const { search, isLoading } = useSelector(state => state.search);
 
-  // const [page, setPage] = useState(1);
-
   useEffect(() => {
     dispatch(searchProducts(name));
   }, [dispatch, name]);

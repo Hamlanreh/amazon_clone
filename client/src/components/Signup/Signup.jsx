@@ -4,16 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Signup.css';
 
 import useDocumentTitle from '../../utils/useDocumentTitle';
-
 import { ReactComponent as AmazonIcon } from '../../assets/images/amazon-logo.svg';
 import { signup } from '../../features/user/userSlice';
 
 const Signup = () => {
   useDocumentTitle('Create account on amazon clone');
-
-  const { isAuthenticated } = useSelector(state => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isAuthenticated } = useSelector(state => state.user);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

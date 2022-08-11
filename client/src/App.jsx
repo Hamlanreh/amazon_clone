@@ -3,6 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -16,9 +17,9 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import Reviews from './components/Reviews/Reviews';
 import Checkout from './components/Checkout/Checkout';
 import Orders from './components/Orders/Orders';
-// import User from './components/User/User';
-// import Settings from './components/User/Settings/Settings';
-// import Deactivate from './components/User/Deactivate/Deactivate';
+import User from './components/User/User';
+import Settings from './components/User/Settings/Settings';
+import Deactivate from './components/User/Deactivate/Deactivate';
 import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
 import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
@@ -99,7 +100,9 @@ const App = () => {
               <>
                 <Header />
                 <Navbar />
-                <Checkout />
+                <ProtectedRoute>
+                  <Checkout />
+                </ProtectedRoute>
                 <Footer />
               </>
             }
@@ -129,25 +132,62 @@ const App = () => {
             }
           />
 
-          {/* <Route
+          <Route
             path="/user"
             element={
               <>
                 <Header />
                 <Navbar />
-                <User />
+                <ProtectedRoute>
+                  <User />
+                </ProtectedRoute>
                 <Footer />
               </>
             }
           >
-            <Route index element={<Settings />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="deactivate" element={<Deactivate />} />
-          </Route> */}
+            <Route
+              index
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="deactivate"
+              element={
+                <ProtectedRoute>
+                  <Deactivate />
+                </ProtectedRoute>
+              }
+            />
+          </Route>
 
-          <Route path="/success" element={<PaymentSuccess />} />
+          <Route
+            path="/success"
+            element={
+              <ProtectedRoute>
+                <PaymentSuccess />
+              </ProtectedRoute>
+            }
+          />
 
-          <Route path="/cancel" element={<PaymentCancel />} />
+          <Route
+            path="/cancel"
+            element={
+              <ProtectedRoute>
+                <PaymentCancel />
+              </ProtectedRoute>
+            }
+          />
 
           <Route
             path="*"

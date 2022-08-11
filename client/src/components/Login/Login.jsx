@@ -3,17 +3,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Login.css';
 
-import useDocumentTitle from '../../utils/useDocumentTitle';
-
 import { ReactComponent as AmazonIcon } from '../../assets/images/amazon-logo.svg';
+import useDocumentTitle from '../../utils/useDocumentTitle';
 import { login } from '../../features/user/userSlice';
 
 const Login = () => {
   useDocumentTitle('Log in to your account');
-
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector(state => state.user);
   const navigate = useNavigate();
+  const { isAuthenticated } = useSelector(state => state.user);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -97,8 +95,6 @@ const Login = () => {
           Oluwabi Ahmed (@Hamlanreh)
         </p>
       </footer>
-
-      {/* {isError && <Error message={'Please fill with valid data'} />} */}
     </main>
   );
 };

@@ -3,15 +3,14 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import './ForgotPassword.css';
 
-import useDocumentTitle from '../../utils/useDocumentTitle';
-
 import { ReactComponent as AmazonIcon } from '../../assets/images/amazon-logo.svg';
+import useDocumentTitle from '../../utils/useDocumentTitle';
 import { forgotPassword } from '../../features/user/userSlice';
 
 const ForgotPassword = () => {
   useDocumentTitle('Forgot your password?');
-
   const dispatch = useDispatch();
+
   const [email, setEmail] = useState('');
 
   const handleResetPassword = e => {

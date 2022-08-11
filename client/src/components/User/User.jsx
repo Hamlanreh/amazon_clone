@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './User.css';
 
 const User = () => {
-  const { isAuthenticated, user } = useSelector(state => state.user);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!isAuthenticated) return navigate('/');
-  }, [navigate, isAuthenticated]);
+  const { user } = useSelector(state => state.user);
 
   return (
     <main className="user__section">

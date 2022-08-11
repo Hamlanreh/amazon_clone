@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 .user__profile .form__control div input {
-  width: 25rem;
+  width: 30rem;
 }
 .user__profile label {
   padding: 1rem 0;

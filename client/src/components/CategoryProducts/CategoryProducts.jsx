@@ -4,17 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import './CategoryProducts.css';
 
 import useDocumentTitle from '../../utils/useDocumentTitle';
-
 import Loading from '../Loading/Loading';
 import Product from '../Product/Product';
 import { getCategoryProducts } from '../../features/products/productsSlice';
 
 const CategoryProducts = () => {
   const { category } = useParams();
+  useDocumentTitle(`${category} category products`);
+
   const dispatch = useDispatch();
   const { products, isLoading } = useSelector(state => state.products);
-
-  useDocumentTitle(`${category} category products`);
 
   const [page, setPage] = useState(1);
 
@@ -27,7 +26,6 @@ const CategoryProducts = () => {
   return (
     <section className="category__products">
       <h1 className="category__productsHeading">{category || 'Category'}</h1>
-
       <div className="category__productList">
         {products.map(product => (
           <Product key={product.id} {...product} />
@@ -43,7 +41,6 @@ const CategoryProducts = () => {
             Previous
           </button>
         )}
-
         <button
           className="category__productsBtn category__productsNext"
           onClick={() => setPage(page + 1)}

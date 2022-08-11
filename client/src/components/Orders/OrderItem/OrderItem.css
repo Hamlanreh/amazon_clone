@@ -22,25 +22,3 @@
 .order__productList {
   padding: 1rem 0;
 }
-.order__product {
-  display: flex;
-  align-items: flex-start;
-}
-.order__product + .order__product {
-  margin-top: 1rem;
-}
-.order__product p {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.order__productImg {
-  width: 20rem;
-  height: 20rem;
-  margin-right: 2rem;
-  object-fit: contain;
-}
-.order__productName {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
-}

@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Cart.css';
 
 import useDocumentTitle from '../../utils/useDocumentTitle';
-
 import CartItem from './CartItem/CartItem';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 
@@ -29,14 +28,16 @@ const Cart = () => {
                 <div>
                   <h2>Your Amazon Cart Is Empty</h2>
                   <p>Shop today's deals</p>
-                  <div className="cart__emptyBtn">
-                    <Link to="/login">
-                      <button>Sign in to your account</button>
-                    </Link>
-                    <Link to="/signup">
-                      <button>Sign up now</button>
-                    </Link>
-                  </div>
+                  {isAuthenticated || (
+                    <div className="cart__emptyBtn">
+                      <Link to="/login">
+                        <button>Sign in to your account</button>
+                      </Link>
+                      <Link to="/signup">
+                        <button>Sign up now</button>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

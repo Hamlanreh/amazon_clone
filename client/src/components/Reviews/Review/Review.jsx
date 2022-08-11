@@ -20,6 +20,7 @@ const Review = ({ id, review, rating, user, createdAt }) => {
   const handleEditReview = e => {
     e.preventDefault();
     if (!editReview) return;
+
     dispatch(
       updateReview({
         productId,

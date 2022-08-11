@@ -8,9 +8,8 @@ import { clearItems } from '../../features/cart/cartSlice';
 // import { getCheckoutSession } from '../../features/stripe/stripeSlice';
 
 const Checkout = () => {
-  useDocumentTitle('Checkout');
   const dispatch = useDispatch();
-
+  useDocumentTitle('Checkout ordered product');
   const { isAuthenticated, user } = useSelector(state => state.user);
   const { cartItems, amount, total } = useSelector(state => state.cart);
   //   const { checkoutSession } = useSelector(state => state.stripe);

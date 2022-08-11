@@ -4,12 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import './Settings.css';
 
 import useDocumentTitle from '../../../utils/useDocumentTitle';
-
 import { updateUser, updatePassword } from '../../../features/user/userSlice';
 
 const Settings = () => {
-  useDocumentTitle('Account profile settings and changes');
-
+  useDocumentTitle('Account profile information settings and changes');
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector(state => state.user);
@@ -22,22 +20,24 @@ const Settings = () => {
 
   const handleChangeProfile = e => {
     e.preventDefault();
+
     if (!name || !email || !photo) return;
     dispatch(updateUser({ id: user._id, name, email, photo }));
-
     setName('');
     setEmail('');
-    return navigate('/user');
+
+    navigate('/user');
   };
 
   const handleChangePassword = e => {
     e.preventDefault();
+
     if (!password || !passwordConfirm) return;
     dispatch(updatePassword({ password, passwordConfirm }));
-
     setPassword('');
     setPasswordConfirm('');
-    return navigate('/user');
+
+    navigate('/user');
   };
 
   return (
