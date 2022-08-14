@@ -38,7 +38,12 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'unsafe-inline'", 'https://js.stripe.com/v3'],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          'https://js.stripe.com',
+          'https://js.stripe.com/v3',
+        ],
         styleSrc: ["'self'", "'unsafe-inline'"],
         imgSrc: [
           "'self'",
@@ -46,7 +51,11 @@ app.use(
           'https://res.cloudinary.com',
         ],
         connectSrc: ["'self'"],
-        frameSrc: ["'self'", 'https://js.stripe.com'],
+        frameSrc: [
+          "'self'",
+          'https://js.stripe.com',
+          'https://js.stripe.com/v3',
+        ],
       },
     },
     crossOriginEmbedderPolicy: false,
