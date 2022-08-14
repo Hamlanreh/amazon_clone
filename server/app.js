@@ -67,7 +67,7 @@ app.use('/api', apiLimiter);
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
-// app.use(express.static(`${__dirname}/../client/build`));
+app.use(express.static(`${__dirname}/../client/build`));
 
 app.use(hpp({ whitelist: ['price'] }));
 app.use(xss());
@@ -90,14 +90,6 @@ app.use('/api/v1/orders', orderRouter);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
-// app.all('*', (req, res, next) => {
-//   next(
-//     new ErrorHandler(
-//       `Can't find ${req.originalUrl} on this server.`,
-//       httpStatusCodes.NOT_FOUND
-//     )
-//   );
-// });
 
 // Error handler middleware
 app.use(errorMiddleware);
