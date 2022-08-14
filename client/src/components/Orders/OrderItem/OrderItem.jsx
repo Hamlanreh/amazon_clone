@@ -9,7 +9,10 @@ const OrderItem = ({ order }) => {
       <div className="order__heading">
         <div>
           <h2>Order</h2>
-          <p>{new Date(order.createdAt).toDateString()}</p>
+          <p>
+            {new Date(order.createdAt).toDateString()}
+            {new Date(order.createdAt).toLocaleTimeString()}
+          </p>
         </div>
         <p>{order._id}</p>
       </div>

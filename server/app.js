@@ -50,7 +50,7 @@ app.use(
       },
     },
     crossOriginEmbedderPolicy: false,
-    // crossOriginResourcePolicy: false,
+    crossOriginResourcePolicy: false,
   })
 );
 
