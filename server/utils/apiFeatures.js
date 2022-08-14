@@ -13,7 +13,6 @@ class APIFeatures {
     const queryObj = JSON.parse(
       queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`)
     );
-
     this.query = this.query.find(queryObj);
     return this;
   }

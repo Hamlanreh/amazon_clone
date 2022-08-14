@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.use(authController.protect);
 
-router.post('/create-checkout-session', orderController.createCheckoutSesssion);
+router.post('/secret', orderController.createSecret);
 
 router
   .route('/')
@@ -20,7 +20,11 @@ router
 router
   .route('/:id')
   .get(orderController.getOrder)
-  .patch(authController.restrictTo('admin'), orderController.filterUpdateData, orderController.updateOrder)
+  .patch(
+    authController.restrictTo('admin'),
+    orderController.filterUpdateData,
+    orderController.updateOrder
+  )
   .delete(authController.restrictTo('admin'), orderController.deleteOrder);
 
 module.exports = router;

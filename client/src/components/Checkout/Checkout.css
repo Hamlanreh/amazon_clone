@@ -45,14 +45,20 @@
   font-weight: 600;
 }
 
-.checkout__payment {
-  width: 45rem;
-  padding: 2rem;
+.checkout__form {
+  width: 60rem;
+  font-size: 2rem;
+  padding: 10px;
+  font-weight: 400;
   border: 1px solid lightgrey;
+  border-radius: 4px;
 }
-.checkout__payment > h3 {
-  font-size: 2.7rem;
+.checkout__form > h3,
+.checkout__form > label {
+  display: block;
+  margin-bottom: 1rem;
 }
+
 .checkout__paymentBtn {
   background-color: var(--color-primary-orange);
   padding: 1rem 0;
@@ -62,4 +68,5 @@
   border-radius: 4px;
   font-size: 2rem;
   font-weight: 600;
+  cursor: pointer;
 }

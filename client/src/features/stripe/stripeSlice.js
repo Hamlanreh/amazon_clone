@@ -2,19 +2,17 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../../utils/axios';
 
 const initialState = {
-  checkoutSession: {},
+  clientSecret: '',
   stripePromise: null,
   isLoading: false,
 };
 
-export const getCheckoutSession = createAsyncThunk(
-  'stripe/getCheckoutSession',
-  async items => {
+export const createPaymentSecret = createAsyncThunk(
+  'stripe/getPaymentSecret',
+  async total => {
     try {
-      const { data } = await axios.post('/orders/create-checkout-session', {
-        items,
-      });
-      return await data.session;
+      const { data } = await axios.post('/orders/secret', { total });
+      return data.client_secret;
     } catch (error) {
       return error;
     }
@@ -26,16 +24,16 @@ const stripeSlice = createSlice({
   initialState,
   //   reducers: {},
   extraReducers: {
-    [getCheckoutSession.pending]: state => {
+    [createPaymentSecret.pending]: state => {
       state.isLoading = true;
     },
-    [getCheckoutSession.fulfilled]: (state, action) => {
-      state.checkoutSession = action.payload;
+    [createPaymentSecret.fulfilled]: (state, action) => {
+      state.clientSecret = action.payload;
       state.isLoading = false;
     },
-    [getCheckoutSession.rejected]: state => {
+    [createPaymentSecret.rejected]: state => {
       state.isLoading = false;
-      state.checkoutSession = {};
+      state.clientSecret = '';
     },
   },
 });

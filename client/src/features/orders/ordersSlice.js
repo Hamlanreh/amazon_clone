@@ -9,7 +9,7 @@ const initialState = {
 
 export const getOrders = createAsyncThunk('orders/getOrders', async id => {
   try {
-    const { data } = await axios.get(`/orders`);
+    const { data } = await axios.get(`/orders?sort=-createdAt`);
     return { data: data.data, length: data.length };
   } catch (error) {
     return error;
@@ -18,13 +18,13 @@ export const getOrders = createAsyncThunk('orders/getOrders', async id => {
 
 export const createOrder = createAsyncThunk(
   'orders/createOrder',
-  async ({ cartItems, status }) => {
+  async ({ cartItems }) => {
     try {
       const items = cartItems.map(item => ({
         product: item.id,
         quantity: item.amount,
       }));
-      await axios.post('/orders', { items, status });
+      await axios.post('/orders', { items });
     } catch (error) {
       return error;
     }

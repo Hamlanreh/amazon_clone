@@ -9,6 +9,7 @@
 
 .category__productList {
   max-width: 150rem;
+  min-height: 90vh;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min-content, 30rem));

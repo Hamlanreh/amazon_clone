@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './Cart.css';
 
-import useDocumentTitle from '../../utils/useDocumentTitle';
 import CartItem from './CartItem/CartItem';
+import useDocumentTitle from '../../utils/useDocumentTitle';
 import { calculateTotals, clearItems } from '../../features/cart/cartSlice';
 
 const Cart = () => {
