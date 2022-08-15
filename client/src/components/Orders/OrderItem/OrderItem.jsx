@@ -10,8 +10,9 @@ const OrderItem = ({ order }) => {
         <div>
           <h2>Order</h2>
           <p>
-            {new Date(order.createdAt).toDateString()}
-            {new Date(order.createdAt).toLocaleTimeString()}
+            {`${new Date(order.createdAt).toDateString()} ${new Date(
+              order.createdAt
+            ).toLocaleTimeString()}`}
           </p>
         </div>
         <p>{order._id}</p>
