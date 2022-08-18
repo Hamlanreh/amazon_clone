@@ -35,6 +35,7 @@ The Amazon clone fullstack application is an e-commerce website which was inspir
 Nodemailer
 
 **Cloud Storage**
+
 [Cloudinary](https://cloudinary.com/)
 
 **Mail Service**
