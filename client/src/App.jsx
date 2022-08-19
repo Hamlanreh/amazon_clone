@@ -21,8 +21,6 @@ import Orders from './components/Orders/Orders';
 import User from './components/User/User';
 import Settings from './components/User/Settings/Settings';
 import Deactivate from './components/User/Deactivate/Deactivate';
-import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
-import PaymentCancel from './components/PaymentCancel/PaymentCancel';
 import NotFound404 from './components/NotFound404/NotFound404';
 
 const stripePromise = loadStripe(
@@ -167,24 +165,6 @@ const App = () => {
               }
             />
           </Route>
-
-          <Route
-            path="/success"
-            element={
-              <ProtectedRoute>
-                <PaymentSuccess />
-              </ProtectedRoute>
-            }
-          />
-
-          <Route
-            path="/cancel"
-            element={
-              <ProtectedRoute>
-                <PaymentCancel />
-              </ProtectedRoute>
-            }
-          />
 
           <Route
             path="*"
