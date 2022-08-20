@@ -2,7 +2,7 @@
   background-color: var(--color-primary-black);
   height: 6rem;
   padding: 1rem 0;
-  font-size: 1.4rem;
+  font-size: 1rem;
   color: var(--color-primary-white);
   display: flex;
   align-items: center;
@@ -14,12 +14,23 @@
 .header__logoBox {
   margin: 0 1rem;
 }
+@media screen and (max-width: 31.25em) {
+  .header__logoBox {
+    margin: 0 0.25rem;
+    font-size: 1rem;
+  }
+}
 
 .header__logo {
   display: block;
   width: 12rem;
-  height: 5rem;
+  height: 4rem;
   fill: var(--color-primary-white);
+}
+@media screen and (max-width: 42.5em) {
+  .header__logo {
+    width: 8rem;
+  }
 }
 
 .header__location {
@@ -28,6 +39,11 @@
   margin: 0 1rem;
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 31.25em) {
+  .header__location {
+    padding: 1rem 0;
+  }
 }
 
 .header__location > div {
@@ -41,7 +57,6 @@
   display: flex;
   align-items: center;
 }
-
 .header__searchOption,
 .header__searchInput,
 .header__searchBtn {
@@ -49,7 +64,6 @@
   border: none;
   outline: none;
 }
-
 .header__searchOption {
   background-color: var(--color-primary-grey);
   width: 7rem;
@@ -57,12 +71,10 @@
   border-radius: 4px 0 0 4px;
   border-right: 1px solid var(--color-primary-black);
 }
-
 .header__searchInput {
   width: 100%;
   padding: 1rem;
 }
-
 .header__searchBtn {
   background-color: var(--color-primary-orange);
   padding: 1rem 2rem;
@@ -71,7 +83,6 @@
   justify-content: center;
   align-items: center;
 }
-
 .header__searchBtn:hover {
   cursor: pointer;
 }
@@ -84,11 +95,15 @@
   flex-direction: column;
   justify-content: center;
 }
-
+@media screen and (max-width: 31.25em) {
+  .header__option {
+    margin: 0 0.25rem;
+    font-size: 1rem;
+  }
+}
 .header__optionTop {
   font-size: 1.2rem;
 }
-
 .header__optionBot {
   font-size: 1.6rem;
   font-weight: 600;
@@ -99,6 +114,12 @@
   margin: 0 1rem;
   font-size: 1.6rem;
   font-weight: 600;
+}
+@media screen and (max-width: 31.25em) {
+  .header__cartBox {
+    padding: 1rem 0;
+    margin: 0 0.25rem;
+  }
 }
 
 /* Hover effect */
