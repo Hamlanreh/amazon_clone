@@ -54,8 +54,7 @@ Nodemailer
 
 The user interface is modelled similar to the Amazon website and i've tried to make it as mobile responsive as possible but best view on laptop or desktop. Keep in mind the primary purpose of the application is to create a fully functional e-commerce website
 
-![Home page](https://user-images.githubusercontent.com/101047579/184636132-ebba96f3-e7fc-47ca-8789-b9ac9e760a89.png)
-Landing / Home page
+![amazon-ecommerce-screenshot](https://user-images.githubusercontent.com/101047579/192185265-e366b8fc-a1a3-449e-bd76-0d0dc2cb256d.png)
 
 ![Products list](https://user-images.githubusercontent.com/101047579/184636223-f552db7d-42fe-4b8c-bcc8-45a5d3470cb8.png)
 Products List page
